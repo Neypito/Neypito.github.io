@@ -46,45 +46,45 @@
         color: #4CAF50;
       }
       
+      /* registration form */
+      #register-form {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #FFF;
+        border: 1px solid #CCC;
+        padding: 20px;
+      }
+      
+      #register-form input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Register</h1>
-      <form method="post" action="register.php" enctype="multipart/form-data">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="nickname">Nickname:</label>
-        <input type="text" id="nickname" name="nickname" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <label for="image">Profile Image:</label>
-        <input type="file" id="image" name="image">
-        <br>
-        <button type="submit">Register</button>
-      </form>
+      <h1>My Blog History</h1>
+      <ul>
+        <li><a href="#">Blog Post 1</a></li>
+        <li><a href="#">Blog Post 2</a></li>
+        <li><a href="#">Blog Post 3</a></li>
+        <li><a href="#">Blog Post 4</a></li>
+        <li><a href="#">Blog Post 5</a></li>
+      </ul>
+      <div id="register-form">
+        <h2>Register</h2>
+        <form method="post" action="register.php">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="nickname">Nickname:</label>
+          <input type="text" id="nickname" name="nickname" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
-
-<?php
-// Check if form was submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Get form data
-  $email = $_POST['email'];
-  $nickname = $_POST['nickname'];
-  $password = $_POST['password'];
-
-  // Check if image was uploaded
-  if (isset($_FILES['image'])) {
-    $image = $_FILES['image'];
-    // Check if file is an image
-    if (strpos($image['type'], 'image/') === 0) {
-      // Generate unique filename
-      $filename = uniqid() . '.' . pathinfo($image['name'], PATHINFO_EXTENSION);
-      // Save file to server
-      move_uploaded_file($image['tmp_name
-
