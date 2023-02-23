@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Blog</title>
+    <title>My Blog - Register</title>
     <style>
       /* CSS styles */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-image: linear-gradient(to bottom, #8E2DE2, #4A00E0);
+        background-color: #F5F5F5;
       }
       
       .container {
@@ -34,11 +34,11 @@
       
       /* links */
       a {
-        color: #fff;
+        color: #000;
         text-decoration: none;
         display: block;
         padding: 5px 0;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #000;
         margin-bottom: 10px;
       }
       
@@ -46,20 +46,77 @@
         color: #4CAF50;
       }
       
+      /* Form */
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      
+      input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      
+      .error {
+        color: red;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>My Blog History</h1>
-      <ul>
-        <li><a href="#">Blog Post 1</a></li>
-        <li><a href="#">Blog Post 2</a></li>
-        <li><a href="#">Blog Post 3</a></li>
-        <li><a href="#">Blog Post 4</a></li>
-        <li><a href="#">Blog Post 5</a></li>
-      </ul>
-    </div>
-  </body>
-</html>
+    <?php
+      $nameErr = $emailErr = $passwordErr = "";
+      $name = $email = $password = "";
+      $profilePicture = "";
+
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Validate name
+        if (empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // Check if name contains only letters and whitespace
+          if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        // Validate email
+        if (empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $email = test_input($_POST["email"]);
+          // Check if email address is well-formed
+          if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+          }
+        }
+
+        // Validate password
+        if (empty($_POST["password"])) {
+          $passwordErr = "Password is required";
+        } else {
+          $password = test_input($_POST["password"]);
+          // Check if password is strong enough
+          if (strlen($password) < 
 
 
