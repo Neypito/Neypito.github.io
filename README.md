@@ -42,7 +42,7 @@
       <h1>Welcome to my website!</h1>
       <p>Follow me on social media:</p>
       <button onclick="window.open('https://discord.gg/vqJukpmcpc')">Discord</button>
-      <button onclick="window.open('')">Github</button>
+      <button onclick="window.open('https://github.com/Neypito')">Github</button>
       <button onclick="window.open('https://www.instagram.com/', '_blank')">Instagram</button>
     </div>
   </body>
