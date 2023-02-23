@@ -9,6 +9,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        background-image: linear-gradient(to bottom, #8E2DE2, #4A00E0);
       }
       
       .container {
@@ -47,3 +48,4 @@
     </div>
   </body>
 </html>
+
