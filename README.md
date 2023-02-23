@@ -16,6 +16,9 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
       }
       
       button {
@@ -46,6 +49,18 @@
       <button onclick="window.open('https://github.com/Neypito')">Github</button>
       <button onclick="window.open('https://www.instagram.com/', '_blank')">Instagram</button>
     </div>
+    
+    <div class="container">
+      <h2>Blog & News</h2>
+      <form>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content"></textarea><br>
+        <button type="submit">Post</button>
+      </form>
+    </div>
   </body>
 </html>
+
 
