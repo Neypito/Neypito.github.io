@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Blog</title>
+    <title>My Website</title>
     <style>
       /* CSS styles */
       body {
@@ -24,6 +24,7 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        margin-right: 10px;
       }
       
       button:hover {
@@ -39,8 +40,10 @@
   <body>
     <div class="container">
       <h1>Welcome to my website!</h1>
-      <p>Click the button below to see an alert.</p>
-      <button onclick="handleClick()">Click me!</button>
+      <p>Follow me on social media:</p>
+      <button onclick="window.open('https://discord.gg/vqJukpmcpc')">Discord</button>
+      <button onclick="window.open('')">Github</button>
+      <button onclick="window.open('https://www.instagram.com/', '_blank')">Instagram</button>
     </div>
   </body>
 </html>
