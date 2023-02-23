@@ -75,7 +75,7 @@
       </ul>
       <div id="register-form">
         <h2>Register</h2>
-        <form method="post" action="register.php">
+        <form method="get" action="register.php">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
           <label for="nickname">Nickname:</label>
