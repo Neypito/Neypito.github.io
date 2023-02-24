@@ -9,13 +9,17 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #F5F5F5;
+        background-image: url('https://images.unsplash.com/photo-1607994432649-e1862fd3aae6');
+        background-size: cover;
+        background-position: center;
       }
       
       .container {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
       }
       
       button {
@@ -54,6 +58,8 @@
         background-color: #FFF;
         border: 1px solid #CCC;
         padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
       }
       
       #register-form input {
@@ -77,14 +83,5 @@
         <h2>Register</h2>
         <form method="get" action="register.php">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="nickname">Nickname:</label>
-          <input type="text" id="nickname" name="nickname" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-          <button type="submit">Register</button>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+          <input type="email" id="email" name="email"
+
