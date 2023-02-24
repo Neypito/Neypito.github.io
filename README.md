@@ -9,7 +9,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-image: url('https://images.unsplash.com/photo-1607994432649-e1862fd3aae6');
+        background-image: url('https://chromaticdreamers.com/wp-content/uploads/2022/02/qXsVayNBGNZejBMQeYNiHa-1200-80.jpg');
         background-size: cover;
         background-position: center;
       }
