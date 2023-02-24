@@ -48,24 +48,4 @@
       
     </style>
   </head>
-  <body>
-    <div class="container">
-      <h1>Register</h1>
-      <form method="post" action="register.php" enctype="multipart/form-data">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="nickname">Nickname:</label>
-        <input type="text" id="nickname" name="nickname" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <label for="image">Profile Image:</label>
-        <input type="file" id="image" name="image">
-        <br>
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  </body>
 </html>
