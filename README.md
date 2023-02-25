@@ -63,6 +63,21 @@
         margin-bottom: 10px;
       }
       
+      /* authorization form */
+      #auth-form {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #FFF;
+        border: 1px solid #CCC;
+        padding: 20px;
+      }
+      
+      #auth-form input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      
     </style>
   </head>
   <body>
@@ -75,44 +90,21 @@
         <li><a href="#">Blog Post 4</a></li>
         <li><a href="#">Blog Post 5</a></li>
       </ul>
-      <?php
-        // Set up authorization
-        session_start();
+      <div id="register-form">
+        <h2>Register</h2>
+        <?php
+          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Get form data
+            $email = $_POST['email'];
+            $nickname = $_POST['nickname'];
+            $password = $_POST['password'];
 
-        // Check if user is logged in
-        $logged_in = false;
-        if (isset($_SESSION['user_id'])) {
-          $logged_in = true;
-        }
+            // TODO: Validate form data and store user information in database
 
-        // Handle logout
-        if (isset($_GET['logout'])) {
-          session_destroy();
-          header('Location: ' . $_SERVER['PHP_SELF']);
-          exit;
-        }
-
-        // Handle login
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-          // Get form data
-          $email = $_POST['email'];
-          $password = $_POST['password'];
-
-          // TODO: Validate form data and check if user exists in database
-
-          // Simulate successful login
-          $_SESSION['user_id'] = 1;
-          header('Location: ' . $_SERVER['PHP_SELF']);
-          exit;
-        }
-
-        // Render login/logout form
-        if (!$logged_in) {
-          ?>
-          <div id="register-form">
-            <h2>Login</h2>
-            <form method="POST">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-              <label for="password">Password:</label>
-              <input type="password"
+            echo "<p>Registration successful!</p>";
+          }
+        ?>
+        <form method="POST">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="nickname">Nickname:</
