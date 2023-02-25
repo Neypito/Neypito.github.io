@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -79,23 +80,27 @@
       <div id="register-form">
         <h2>Register</h2>
         <?php
-          // Check if the form has been submitted
-          if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Get form data
             $email = $_POST['email'];
             $nickname = $_POST['nickname'];
             $password = $_POST['password'];
 
-            // TODO: Validate form data
+            // TODO: Validate form data and store user information in database
 
-            // Connect to database
-            $dbhost = 'localhost';
-            $dbname = 'myblog';
-            $dbuser = 'root';
-            $dbpass = '';
-            $db = new PDO("mysql:host=$dbhost;dbname=$dbname;charset=utf8mb4", $dbuser, $dbpass);
-
-            // Insert user information into database
-            $stmt = $db->prepare("INSERT INTO users (email, nickname, password) VALUES (:email, :nickname, :password)");
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam
+            echo "<p>Registration successful!</p>";
+          }
+        ?>
+        <form method="post">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="nickname">Nickname:</label>
+          <input type="text" id="nickname" name="nickname" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
