@@ -10,7 +10,7 @@
         margin: 0;
         padding: 0;
         background-color: #F5F5F5;
-        background-image: url('https://cdn.pixabay.com/photo/2018/07/18/19/12/background-3548967_1280.jpg');
+        background-image: url('[https://cdn.pixabay.com/photo/2018/07/18/19/12/background-3548967_1280.jpg](https://cdn140.picsart.com/291356568027201.gif?to=min&r=1024)');
         background-size: cover;
         background-repeat: no-repeat;
       }
