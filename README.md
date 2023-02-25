@@ -1,4 +1,3 @@
-
 <html>
   <head>
     <meta charset="UTF-8">
@@ -77,29 +76,28 @@
         <li><a href="#">Blog Post 5</a></li>
       </ul>
       <div id="register-form">
-        <h2>Register</h2>
         <?php
-          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Get form data
-            $email = $_POST['email'];
-            $nickname = $_POST['nickname'];
-            $password = $_POST['password'];
+          session_start();
+          if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+            echo "<h2>Welcome " . $_SESSION["nickname"] . "</h2>";
+            echo "<a href='logout.php'><button>Logout</button></a>";
+          } else {
+            echo "<h2>Register or Login</h2>";
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+              // Get form data
+              $email = $_POST['email'];
+              $nickname = $_POST['nickname'];
+              $password = $_POST['password'];
 
-            // TODO: Validate form data and store user information in database
+              // TODO: Validate form data and check user information in database
+              // Here you can use any method to validate user data, like checking with a database or a file.
 
-            echo "<p>Registration successful!</p>";
-          }
-        ?>
-        <form method="GET">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="nickname">Nickname:</label>
-          <input type="text" id="nickname" name="nickname" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-          <button type="submit">Register</button>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+              // For the purpose of this example, we are hardcoding the login information.
+              $valid_user = false;
+              $users = [
+                ["email" => "test1@example.com", "nickname" => "test1", "password" => "password1"],
+                ["email" => "test2@example.com", "nickname" => "test2", "password" => "password2"]
+              ];
+
+              foreach ($users as $user) {
+                if ($
