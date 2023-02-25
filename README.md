@@ -80,7 +80,7 @@
         <h2>Register</h2>
         <?php
           // Check if the form has been submitted
-          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             // Get form data
             $email = $_POST['email'];
             $nickname = $_POST['nickname'];
