@@ -76,34 +76,43 @@
         <li><a href="#">Blog Post 5</a></li>
       </ul>
       <?php
-        // Authorization check
+        // Set up authorization
         session_start();
-        if(!empty($_SESSION["authorized"]) && $_SESSION["authorized"] === true) {
-          echo "<p>Welcome ".$_SESSION['username']."!</p>";
-          echo '<form action="logout.php" method="POST">
-                  <button type="submit" name="logout">Logout</button>
-                </form>';
-        } else {
-          // Display registration form
-          echo '<div id="register-form">
-                  <h2>Register</h2>';
-          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Get form data
-            $email = $_POST['email'];
-            $nickname = $_POST['nickname'];
-            $password = $_POST['password'];
 
-            // TODO: Validate form data and store user information in database
+        // Check if user is logged in
+        $logged_in = false;
+        if (isset($_SESSION['user_id'])) {
+          $logged_in = true;
+        }
 
-            // Set session variables
-            $_SESSION["authorized"] = true;
-            $_SESSION["username"] = $nickname;
+        // Handle logout
+        if (isset($_GET['logout'])) {
+          session_destroy();
+          header('Location: ' . $_SERVER['PHP_SELF']);
+          exit;
+        }
 
-            echo "<p>Registration successful!</p>";
-            echo '<form action="logout.php" method="POST">
-                    <button type="submit" name="logout">Logout</button>
-                  </form>';
-          } else {
-            echo '<form method="POST">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email
+        // Handle login
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          // Get form data
+          $email = $_POST['email'];
+          $password = $_POST['password'];
+
+          // TODO: Validate form data and check if user exists in database
+
+          // Simulate successful login
+          $_SESSION['user_id'] = 1;
+          header('Location: ' . $_SERVER['PHP_SELF']);
+          exit;
+        }
+
+        // Render login/logout form
+        if (!$logged_in) {
+          ?>
+          <div id="register-form">
+            <h2>Login</h2>
+            <form method="POST">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <label for="password">Password:</label>
+              <input type="password"
