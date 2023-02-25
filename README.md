@@ -10,6 +10,9 @@
         margin: 0;
         padding: 0;
         background-color: #F5F5F5;
+        background-image: url('https://cdn.pixabay.com/photo/2018/07/18/19/12/background-3548967_1280.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       
       .container {
@@ -75,7 +78,19 @@
       </ul>
       <div id="register-form">
         <h2>Register</h2>
-        <form method="get" action="register.php">
+        <?php
+          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Get form data
+            $email = $_POST['email'];
+            $nickname = $_POST['nickname'];
+            $password = $_POST['password'];
+
+            // TODO: Validate form data and store user information in database
+
+            echo "<p>Registration successful!</p>";
+          }
+        ?>
+        <form method="post">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
           <label for="nickname">Nickname:</label>
