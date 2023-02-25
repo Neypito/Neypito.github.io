@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -91,7 +90,7 @@
             echo "<p>Registration successful!</p>";
           }
         ?>
-        <form method="post">
+        <form method="get">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
           <label for="nickname">Nickname:</label>
