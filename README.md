@@ -75,29 +75,35 @@
         <li><a href="#">Blog Post 4</a></li>
         <li><a href="#">Blog Post 5</a></li>
       </ul>
-      <div id="register-form">
-        <?php
-          session_start();
-          if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-            echo "<h2>Welcome " . $_SESSION["nickname"] . "</h2>";
-            echo "<a href='logout.php'><button>Logout</button></a>";
+      <?php
+        // Authorization check
+        session_start();
+        if(!empty($_SESSION["authorized"]) && $_SESSION["authorized"] === true) {
+          echo "<p>Welcome ".$_SESSION['username']."!</p>";
+          echo '<form action="logout.php" method="POST">
+                  <button type="submit" name="logout">Logout</button>
+                </form>';
+        } else {
+          // Display registration form
+          echo '<div id="register-form">
+                  <h2>Register</h2>';
+          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Get form data
+            $email = $_POST['email'];
+            $nickname = $_POST['nickname'];
+            $password = $_POST['password'];
+
+            // TODO: Validate form data and store user information in database
+
+            // Set session variables
+            $_SESSION["authorized"] = true;
+            $_SESSION["username"] = $nickname;
+
+            echo "<p>Registration successful!</p>";
+            echo '<form action="logout.php" method="POST">
+                    <button type="submit" name="logout">Logout</button>
+                  </form>';
           } else {
-            echo "<h2>Register or Login</h2>";
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-              // Get form data
-              $email = $_POST['email'];
-              $nickname = $_POST['nickname'];
-              $password = $_POST['password'];
-
-              // TODO: Validate form data and check user information in database
-              // Here you can use any method to validate user data, like checking with a database or a file.
-
-              // For the purpose of this example, we are hardcoding the login information.
-              $valid_user = false;
-              $users = [
-                ["email" => "test1@example.com", "nickname" => "test1", "password" => "password1"],
-                ["email" => "test2@example.com", "nickname" => "test2", "password" => "password2"]
-              ];
-
-              foreach ($users as $user) {
-                if ($
+            echo '<form method="POST">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email
