@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
         margin: 0;
         padding: 0;
         background-color: #F5F5F5;
-        background-image: url('https://cdn140.picsart.com/291356568027201.gif?to=min&r=1024');
+        background-image: url('https://cdn.pixabay.com/photo/2018/07/18/19/12/background-3548967_1280.jpg');
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -63,21 +64,6 @@
         margin-bottom: 10px;
       }
       
-      /* authorization form */
-      #auth-form {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: #FFF;
-        border: 1px solid #CCC;
-        padding: 20px;
-      }
-      
-      #auth-form input {
-        display: block;
-        margin-bottom: 10px;
-      }
-      
     </style>
   </head>
   <body>
@@ -104,7 +90,16 @@
             echo "<p>Registration successful!</p>";
           }
         ?>
-        <form method="POST">
+        <form method="post">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
-          <label for="nickname">Nickname:</
+          <label for="nickname">Nickname:</label>
+          <input type="text" id="nickname" name="nickname" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
