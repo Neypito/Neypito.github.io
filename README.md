@@ -90,7 +90,7 @@
             echo "<p>Registration successful!</p>";
           }
         ?>
-        <form method="POST">
+        <form method="GET">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
           <label for="nickname">Nickname:</label>
