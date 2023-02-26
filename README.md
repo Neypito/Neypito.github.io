@@ -9,7 +9,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background: linear-gradient(to bottom, #F5F5F5, #FFF);
+        background-color: #F5F5F5;
         background-image: url('https://cdn.pixabay.com/photo/2018/07/18/19/12/background-3548967_1280.jpg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -79,7 +79,7 @@
       <div id="register-form">
         <h2>Register</h2>
         <?php
-          if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Get form data
             $email = $_POST['email'];
             $nickname = $_POST['nickname'];
@@ -90,5 +90,16 @@
             echo "<p>Registration successful!</p>";
           }
         ?>
-        <form method="get">
+        <form method="post">
           <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="nickname">Nickname:</label>
+          <input type="text" id="nickname" name="nickname" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
