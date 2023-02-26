@@ -1,4 +1,3 @@
-
 <html>
   <head>
     <meta charset="UTF-8">
@@ -63,40 +62,10 @@
         display: block;
         margin-bottom: 10px;
       }
-
-      /* menu */
-      .menu {
-        background-color: #333;
-        overflow: hidden;
-        margin-bottom: 20px;
-      }
-
-      .menu a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-
-      .menu a:hover {
-        background-color: #4CAF50;
-        color: white;
-      }
-
-      .active {
-        background-color: #4CAF50;
-      }
-
+      
     </style>
   </head>
   <body>
-    <div class="menu">
-      <a class="active" href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </div>
     <div class="container">
       <h1>My Blog History</h1>
       <ul>
@@ -115,4 +84,22 @@
             $nickname = $_POST['nickname'];
             $password = $_POST['password'];
 
-            // TODO: Validate form data and
+            // TODO: Validate form data and store user information in database
+
+            echo "<p>Registration successful!</p>";
+          }
+        ?>
+        <form method="get">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="nickname">Nickname:</label>
+          <input type="text" id="nickname" name="nickname" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
