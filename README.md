@@ -66,6 +66,7 @@
       </span>
       <span class="text">Discord</span>
     </a>
+    <link rel="stylesheet" href="https://discord.gg/vqJukpmcpc">
     
   </ul>
 </div>
