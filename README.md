@@ -59,13 +59,12 @@
   </a>
   </li>
   <li class="list">
-    <a href="#">
+    <a href="https://discord.gg/xzpNx2Tx">
       <span class="icon">
         <ion-icon name="logo-discord"></ion-icon>
       </span>
       <span class="text">Discord</span>
     </a>
-    <link rel="stylesheet" href="https://discord.gg/vqJukpmcpc">
     
   </ul>
 </div>
