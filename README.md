@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -59,7 +60,7 @@
   </a>
   </li>
   <li class="list">
-    <a href="https://discord.gg/xzpNx2Tx">
+    <a href="https://discord.gg/xzpNx2Tx" target="_blank">
       <span class="icon">
         <ion-icon name="logo-discord"></ion-icon>
       </span>
