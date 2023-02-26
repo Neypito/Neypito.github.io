@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -63,6 +64,20 @@
         margin-bottom: 10px;
       }
       
+      /* social links */
+      .social-links {
+        margin-top: 50px;
+      }
+      
+      .social-links a {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      
+      .social-links img {
+        height: 30px;
+      }
+      
     </style>
   </head>
   <body>
@@ -93,13 +108,5 @@
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
           <label for="nickname">Nickname:</label>
-          <input type="text" id="nickname" name="nickname" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-          <button type="submit">Register</button>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+
 
