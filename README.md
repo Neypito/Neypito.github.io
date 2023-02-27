@@ -81,6 +81,13 @@
       <button onclick="window.open('https://discord.gg/vqJukpmcpc')">Discord</button>
       <button onclick="window.open('https://github.com/Neypito')">Github</button>
       <button onclick="window.open('https://www.instagram.com/', '_blank')">Instagram</button>
+<nav>
+  <a href="#">Главная</a>
+  <a href="#">О нас</a>
+  <a href="#">Контакты</a>
+  <div id="indicator"></div>
+</nav>
+
     </div>
   </body>
 </html>
