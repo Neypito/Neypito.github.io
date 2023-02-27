@@ -49,8 +49,8 @@ body
 nav
 {
     position: absolute;
-    top: 50%;
-    right: 0;
+    top: 70%;
+    right: 200;
     left: 0;
     width: 319px;
     display: table;
